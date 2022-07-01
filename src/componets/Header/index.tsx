@@ -18,8 +18,8 @@ console.log(isActiveBurger)
 
   return (
     <HeaderContainerStyled>
-      <LogoNavContainerStyled>
 
+      <LogoNavContainerStyled>
         <TitleStyled>Modsen Health</TitleStyled>
 
           <NavigationContainerStyled isActiveBurger={isActiveBurger}>

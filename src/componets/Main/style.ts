@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const MainContainerStyled = styled.main`
   display: flex;
+
+  @media(max-width: 768px) {
+    margin-top: 960px;
+  }
 `
 export const MainContentStyled = styled.div`
   display: flex;
@@ -9,6 +13,11 @@ export const MainContentStyled = styled.div`
   flex-direction: column;
   margin-top: 80px;
   margin-left: -6px;
+
+  @media(max-width: 768px) {
+    margin-top: 72px;
+    margin-left: 25px;
+  }
 `
 export const MainTitleStyled = styled.h1`
   font-family: 'Roboto', sans-serif;

@@ -13,10 +13,10 @@ export const InputEmailContainerStyled = styled.div`
 
   &::before {
     content: '';
-    background-image: url(${mail});
-    width: 20px;
+    background: url(${mail}) no-repeat;
+    width: 22px;
     height: 16px;
-    margin-right: 21px;
+    margin-right: 24px;
     margin-left: 24px;
     opacity: 0.2;
   }

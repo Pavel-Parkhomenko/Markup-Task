@@ -4,6 +4,7 @@ import bell from '../../@types/svg/bell.svg'
 import burgerIcon from '../../@types/svg/burger.svg'
 
 export const HeaderContainerStyled = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,23 +12,21 @@ export const HeaderContainerStyled = styled.div`
 
 export const LogoNavContainerStyled = styled.div`
   display: flex;
+  width: 65%;
   justify-content: space-between;
-  width: 64.15%;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `
 
 export const BurgerIconStyled = styled.div`
   background-image: url(${burgerIcon});
   width: 32px;
   height: 32px;
+  position: absolute;
+  right: 10px;
 
   @media (min-width: 768px) {
     display: none;
   }
-`;
+`
 
 export const TitleStyled = styled.div`
   font-style: normal;
@@ -36,7 +35,7 @@ export const TitleStyled = styled.div`
   line-height: 24px;
   color: #000000;
   display: flex;
-  align-self: center;
+  align-items: center;
 
   &::before {
     content: '';
@@ -47,24 +46,27 @@ export const TitleStyled = styled.div`
   }
 `
 
-export const NavigationContainerStyled = styled.div<{isActiveBurger: boolean}>`
+export const NavigationContainerStyled = styled.div<{ isActiveBurger: boolean }>`
+  width: 450px;
+  padding-right: 5px;
   & > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 442px;
+    width: 100%;
     flex-direction: row;
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     width: 20%;
     position: absolute;
     right: 0;
 
     & > nav {
-      display: ${({ isActiveBurger }) => isActiveBurger ? "none" : "flex"};
+      display: ${({ isActiveBurger }) => isActiveBurger ? 'none' : 'flex'};
       flex-direction: column;
       width: auto;
+      margin-top: 20px;
     }
   }
 `
@@ -79,11 +81,15 @@ export const AuthContainer = styled.div`
     height: 18.3px;
     background-image: url(${bell});
     margin-left: 61.83px;
+
+    @media (max-width: 992px) {
+      margin-left: 15px;
+    }
   }
     
-    @media (max-width: 768px) {
-      display: none;
-    }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const LogInStyled = styled.a.attrs({
@@ -97,11 +103,12 @@ export const LogInStyled = styled.a.attrs({
   color: #7D8790;
   margin-right: 40px;
   text-decoration: none;
-
-  @media (max-width: 1024px) {
+  
+  @media(max-width: 1024px){
     margin-right: 15px;
   }
 `
+
 export const RegisterButtonStyled = styled.button`
   font-family: 'Roboto', sans-serif;
   font-style: normal;

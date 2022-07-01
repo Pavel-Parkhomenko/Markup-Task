@@ -19,8 +19,8 @@ export const HomeWrapperStyled = styled.div`
   filter: drop-shadow(50px -56px 104px rgba(28, 91, 235, 0.05));
 
   @media(max-width: 768px) {
-    padding: 25px 17px 122px 15px;
-    background: url(${manBackMobile}) no-repeat 0 0,
+    padding: 26px 19px 50px 15px;
+    background: url(${manBackMobile}) no-repeat 10% 0,
     url(${bigVectorMobile}) no-repeat 0 18%;
   }
 `

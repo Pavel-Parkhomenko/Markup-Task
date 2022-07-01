@@ -20,39 +20,39 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <LinkContainerStyled>
+      <LinkContainerStyled active={(pathname === HOME_ROUTE).toString()}>
         <LinkStyled to={HOME_ROUTE}>
           Home
         </LinkStyled>
-        <CircleLinkPointStyled active={(pathname === HOME_ROUTE).toString()}/>
+        <CircleLinkPointStyled />
       </LinkContainerStyled>
 
-      <LinkContainerStyled>
+      <LinkContainerStyled active={(pathname === SERVICES_ROUTE).toString()}>
         <LinkStyled to={SERVICES_ROUTE}>
           Services
         </LinkStyled>
-        <CircleLinkPointStyled active={(pathname === SERVICES_ROUTE).toString()}/>
+        <CircleLinkPointStyled />
       </LinkContainerStyled>
 
-      <LinkContainerStyled>
+      <LinkContainerStyled active={(pathname === CLINIC_ROUTE).toString()}>
         <LinkStyled to={CLINIC_ROUTE}>
           Clinic
         </LinkStyled>
-        <CircleLinkPointStyled active={(pathname === CLINIC_ROUTE).toString()}/>
+        <CircleLinkPointStyled />
       </LinkContainerStyled>
 
-      <LinkContainerStyled>
+      <LinkContainerStyled active={(pathname === DOCTORS_ROUTE).toString()}>
         <LinkStyled to={DOCTORS_ROUTE}>
           Doctors
         </LinkStyled>
-        <CircleLinkPointStyled active={(pathname === DOCTORS_ROUTE).toString()}/>
+        <CircleLinkPointStyled />
       </LinkContainerStyled>
 
-      <LinkContainerStyled>
+      <LinkContainerStyled active={(pathname === CONTACT_ROUTE).toString()}>
         <LinkStyled to={CONTACT_ROUTE}>
           Contact
         </LinkStyled>
-        <CircleLinkPointStyled active={(pathname === CONTACT_ROUTE).toString()}/>
+        <CircleLinkPointStyled />
       </LinkContainerStyled>
 
     </nav>

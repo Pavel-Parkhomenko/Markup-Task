@@ -1,25 +1,27 @@
 const font = 'sans-serif'
 
 const textColor = {
-  primary: '#2140bb',
+  primary: '#215EE9',
   secondary: '#919191',
   success: '#30c20d',
   danger: '#d31111',
   warning: '#dcd929',
   info: '#b4cdea',
   light: '#fff',
-  dark: '#101215',
-  muted: '#cecdcd',
+  dark: '#000',
+  lightDark: '#333333',
+  muted: '#7D8790',
   white: '#fff',
 }
 
 const bgColor = {
-  primary: '#2140bb',
+  primary: '#215EE9',
   secondary: '#919191',
   success: '#30c20d',
   danger: '#d31111',
   warning: '#dcd929',
   dark: '#101215',
+  light: '#fff',
 }
 
 const size = {

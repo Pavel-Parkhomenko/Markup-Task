@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import logo from '../../@types/svg/logo.svg'
 import bell from '../../@types/svg/bell.svg'
 import burgerIcon from '../../@types/svg/burger.svg'
+
 
 export const HeaderContainerStyled = styled.div`
   width: 100%;
@@ -20,8 +21,6 @@ export const BurgerIconStyled = styled.div`
   background-image: url(${burgerIcon});
   width: 32px;
   height: 32px;
-  position: absolute;
-  right: 10px;
 
   @media (min-width: 768px) {
     display: none;
@@ -31,7 +30,8 @@ export const BurgerIconStyled = styled.div`
 export const TitleStyled = styled.div`
   font-size: 16px;
   line-height: 24px;
-  color: #000000;
+  font-weight: 700;
+  color: ${({ theme } ) => theme.textColor.dark};
   display: flex;
   align-items: center;
 
@@ -44,9 +44,19 @@ export const TitleStyled = styled.div`
   }
 `
 
+const fromRight = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`
+
 export const NavigationContainerStyled = styled.div<{ isActiveBurger: boolean }>`
   width: 450px;
   padding-right: 5px;
+
   & > nav {
     display: flex;
     justify-content: space-between;
@@ -56,15 +66,18 @@ export const NavigationContainerStyled = styled.div<{ isActiveBurger: boolean }>
   }
 
   @media (max-width: 768px) {
-    width: 20%;
+    width: 120px;
     position: absolute;
     right: 0;
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
     & > nav {
       display: ${({ isActiveBurger }) => isActiveBurger ? 'none' : 'flex'};
       flex-direction: column;
       width: auto;
-      margin-top: 20px;
+      & > div {animation: ${fromRight} 0.5s;}
     }
   }
 `
@@ -93,11 +106,10 @@ export const AuthContainer = styled.div`
 export const LogInStyled = styled.a.attrs({
   href: '#',
 })`
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  color: #7D8790;
+  color: ${({ theme } ) => theme.textColor.muted};
   margin-right: 40px;
   text-decoration: none;
   
@@ -107,15 +119,14 @@ export const LogInStyled = styled.a.attrs({
 `
 
 export const RegisterButtonStyled = styled.button`
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
   width: 146px;
   height: 52px;
-  color: #FFFFFF;
-  background-color: #215EE9;
+  color: ${({ theme } ) => theme.textColor.light};
+  background-color: ${({ theme } ) => theme.textColor.primary};;
   border-radius: 40px;
   border: 0;
   box-shadow: 0 100px 161px rgba(33, 94, 233, 0.08),

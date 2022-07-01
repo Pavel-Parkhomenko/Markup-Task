@@ -1,24 +1,37 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const LinkContainerStyled = styled.div`
+export const LinkContainerStyled = styled.div<{ active: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 3px;
+  margin-top: 3px;
+  color: ${({ theme }) => theme.textColor.muted};
+
+  ${props => props.active === 'true' ? css`
+    & > :last-child {
+      opacity: 1;
+    }
+
+    & > :first-child {
+      color: ${({ theme }) => theme.textColor.primary}
+    }
+  ` : css`
+    & > :last-child {
+      opacity: 0;
+    }
+  `};
 `
 
-export const CircleLinkPointStyled = styled.div<{active: string}>`
+export const CircleLinkPointStyled = styled.div`
   border-radius: 50%;
-  background-color: blue;
+  background-color: ${({ theme }) => theme.bgColor.primary};
   width: 8px;
   height: 8px;
-  opacity: ${props => props.active === 'true' ? 1 : 0};
 `
 
 export const LinkStyled = styled(Link)`
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
@@ -27,8 +40,9 @@ export const LinkStyled = styled(Link)`
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 10px;
-  
+  color: ${({ theme }) => theme.textColor.muted};
+
   &:hover {
-    color: #215EE9;
+    color: ${({ theme }) => theme.bgColor.primary};
   }
 `

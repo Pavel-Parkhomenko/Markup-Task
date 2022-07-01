@@ -9,7 +9,6 @@ export const MainContainerStyled = styled.main`
 `
 export const MainContentStyled = styled.div`
   display: flex;
-  flex: 1;
   flex-direction: column;
   margin-top: 80px;
   margin-left: -6px;
@@ -20,34 +19,44 @@ export const MainContentStyled = styled.div`
   }
 `
 export const MainTitleStyled = styled.h1`
-  font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 24px;
-  color: #215EE9;
+  color: ${({ theme }) => theme.textColor.primary};
   margin-top: 20px;
   margin-bottom: 20px;
 `
 
 export const MainPostMessageStyled = styled.h2`
-  font-style: normal;
   font-weight: bold;
   font-size: 65px;
-  line-height: 64px;
-  letter-spacing: -1px;
-  color: #215EE9;
+  line-height: 101.8%;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.textColor.primary};
   margin-bottom: 33px;
-  max-width: 515px;
+  width: 543px;
   margin-top: 0;
+  
+  @media(max-width: 414px) {
+    line-height: 44px;
+    font-size: 45px;
+    width: 300px;
+  }
 `
 
-export const MainMessageStyled = styled.span`
-  font-style: normal;
-  font-weight: 400;
-  color: #215EE9;
-  max-width: 543px;
+export const MainMessageStyled = styled.p`
+  margin: 0 0 50px 0;
+  padding: 0;
+  font-weight: normal;
+  color: ${({ theme }) => theme.textColor.primary};
+  width: 543px;
   font-size: 20px;
   line-height: 30px;
   opacity: 0.7;
-  margin-bottom: 45px;
+
+  @media(max-width: 414px) {
+    line-height: 25px;
+    font-size: 14px;
+    width: 320px;
+  }
 `

@@ -7,7 +7,7 @@ const textColor = {
   danger: '#d31111',
   warning: '#dcd929',
   info: '#b4cdea',
-  // light: '#fff',
+  light: '#fff',
   dark: '#101215',
   muted: '#cecdcd',
   white: '#fff',

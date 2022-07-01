@@ -1,15 +1,19 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import RobotoRegular from './@types/fonts/Roboto-Regular.ttf'
+import RobotoThin from './@types/fonts/Roboto-Thin.ttf'
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   @font-face {
     font-family: 'Roboto';
-    src: url(${RobotoRegular}) format('ttf');
-    font-weight: 400;
+    src: url(${RobotoThin}) format('ttf');
     font-style: normal;
     font-display: auto;
+  }
+  
+  *{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
   }
 `

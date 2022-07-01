@@ -11,9 +11,9 @@ export const HomeWrapperStyled = styled.div`
   width: 100%;
   min-height: 960px;
   padding: 9% 6% 5% 10.5%;
-  background: url(${manBackDesktop}) no-repeat 97.5% 45px,
+  background: url(${manBackDesktop}) no-repeat 100% 45%,
     url(${littleVector}) no-repeat 90% 25%,
-    url(${bigVector}) no-repeat 98% 100%,
+    url(${bigVector}) no-repeat 100% 100%,
     url(${linesBottom}) no-repeat 0 95%,
     url(${linesTop}) no-repeat 98% 8%;
   filter: drop-shadow(50px -56px 104px rgba(28, 91, 235, 0.05));

@@ -29,8 +29,6 @@ export const BurgerIconStyled = styled.div`
 `
 
 export const TitleStyled = styled.div`
-  font-style: normal;
-  font-weight: bold;
   font-size: 16px;
   line-height: 24px;
   color: #000000;
@@ -95,7 +93,6 @@ export const AuthContainer = styled.div`
 export const LogInStyled = styled.a.attrs({
   href: '#',
 })`
-  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -110,7 +107,6 @@ export const LogInStyled = styled.a.attrs({
 `
 
 export const RegisterButtonStyled = styled.button`
-  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;

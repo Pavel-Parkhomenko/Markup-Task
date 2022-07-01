@@ -20,7 +20,6 @@ export const MainContentStyled = styled.div`
   }
 `
 export const MainTitleStyled = styled.h1`
-  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -31,7 +30,6 @@ export const MainTitleStyled = styled.h1`
 `
 
 export const MainPostMessageStyled = styled.h2`
-  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 65px;
@@ -44,7 +42,6 @@ export const MainPostMessageStyled = styled.h2`
 `
 
 export const MainMessageStyled = styled.span`
-  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   color: #215EE9;

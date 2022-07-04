@@ -2,7 +2,7 @@ import React from 'react'
 import {
   LinkStyled,
   LinkContainerStyled,
-  CircleLinkPointStyled
+  CircleLinkPointStyled, NavContainerStyled,
 } from './style'
 import { useLocation } from 'react-router-dom'
 import {
@@ -11,15 +11,16 @@ import {
   HOME_ROUTE,
   DOCTORS_ROUTE,
   SERVICES_ROUTE,
-} from '../../constants'
-
-//const links: string[] = ['Home', 'Services', 'Clinic', 'Doctors', 'Contact']
+} from '@/constants'
+import { AuthContainer, LogInStyled, RegisterButtonStyled } from './style'
 
 export const Navigation = () => {
   const { pathname } = useLocation()
 
   return (
     <nav>
+
+      <NavContainerStyled>
       <LinkContainerStyled active={(pathname === HOME_ROUTE).toString()}>
         <LinkStyled to={HOME_ROUTE}>
           Home
@@ -54,6 +55,13 @@ export const Navigation = () => {
         </LinkStyled>
         <CircleLinkPointStyled />
       </LinkContainerStyled>
+
+      </NavContainerStyled>
+
+      <AuthContainer>
+        <LogInStyled>Log In</LogInStyled>
+        <RegisterButtonStyled>Registr</RegisterButtonStyled>
+      </AuthContainer>
 
     </nav>
   )

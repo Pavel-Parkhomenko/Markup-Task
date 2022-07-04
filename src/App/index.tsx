@@ -1,20 +1,20 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Home } from '../pages/Home'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from '@/pages/Home'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from '../globalStyle'
-import theme from '../theme'
+import { GlobalStyle } from '@/globalStyle'
+import { defaultTheme } from '@/theme'
 import {
   CLINIC_ROUTE,
   CONTACT_ROUTE,
   HOME_ROUTE,
   DOCTORS_ROUTE,
   SERVICES_ROUTE,
-} from '../constants'
+} from '@/constants'
 
 export function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <BrowserRouter>
         <Routes>

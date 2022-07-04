@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import {
   HeaderContainerStyled,
   LogoNavContainerStyled,
-  AuthContainer,
   TitleStyled,
-  LogInStyled,
-  RegisterButtonStyled,
   NavigationContainerStyled,
   BurgerIconStyled,
 } from './style'
@@ -21,18 +18,12 @@ console.log(isActiveBurger)
 
       <LogoNavContainerStyled>
         <TitleStyled>Modsen Health</TitleStyled>
-
-          <NavigationContainerStyled isActiveBurger={isActiveBurger}>
-            <BurgerIconStyled onClick={burgerHandler}/>
-            <Navigation />
-          </NavigationContainerStyled>
-
       </LogoNavContainerStyled>
 
-      <AuthContainer>
-        <LogInStyled>Log In</LogInStyled>
-        <RegisterButtonStyled>Registr</RegisterButtonStyled>
-      </AuthContainer>
+      <NavigationContainerStyled isActiveBurger={isActiveBurger}>
+        <BurgerIconStyled onClick={burgerHandler}/>
+        <Navigation />
+      </NavigationContainerStyled>
 
     </HeaderContainerStyled>
   )

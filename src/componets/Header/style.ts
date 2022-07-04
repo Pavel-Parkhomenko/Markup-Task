@@ -1,8 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import logo from '../../@types/svg/logo.svg'
-import bell from '../../@types/svg/bell.svg'
 import burgerIcon from '../../@types/svg/burger.svg'
-
 
 export const HeaderContainerStyled = styled.div`
   width: 100%;
@@ -13,24 +11,26 @@ export const HeaderContainerStyled = styled.div`
 
 export const LogoNavContainerStyled = styled.div`
   display: flex;
-  width: 65%;
+  width: ${props => props.theme.size.med}px;
   justify-content: space-between;
 `
 
 export const BurgerIconStyled = styled.div`
   background-image: url(${burgerIcon});
-  width: 32px;
-  height: 32px;
-
+  width: ${props => props.theme.spaces[4]}px;
+  height: ${props => props.theme.spaces[4]}px;
+  position: absolute;
+  right: ${props => props.theme.spaces[3]}px;
+  
   @media (min-width: 768px) {
     display: none;
   }
 `
 
 export const TitleStyled = styled.div`
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
+  font-size: ${props => props.theme.fontSizes[2]}px;
+  line-height: ${props => props.theme.fontSizes[4]}px;
+  font-weight: bold;
   color: ${({ theme } ) => theme.textColor.dark};
   display: flex;
   align-items: center;
@@ -38,9 +38,9 @@ export const TitleStyled = styled.div`
   &::before {
     content: '';
     background-image: url(${logo});
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+    width: ${props => props.theme.size.little - 1}px;
+    height: ${props => props.theme.size.little - 1}px;
+    margin-right: ${props => props.theme.spaces[2] + 2}px;
   }
 `
 
@@ -54,89 +54,31 @@ const fromRight = keyframes`
 `
 
 export const NavigationContainerStyled = styled.div<{ isActiveBurger: boolean }>`
-  width: 450px;
-  padding-right: 5px;
+  padding-right: ${props => props.theme.spaces[1]}px;
 
   & > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     flex-direction: row;
   }
 
   @media (max-width: 768px) {
-    width: 120px;
     position: absolute;
-    right: 0;
+    right: ${props => props.theme.spaces[3]}px;
     display: flex;
-    align-items: center;
+    justify-content: right;
     flex-direction: column;
+    top: ${props => props.theme.spaces[3] + 10}px;
     
     & > nav {
       display: ${({ isActiveBurger }) => isActiveBurger ? 'none' : 'flex'};
       flex-direction: column;
-      width: auto;
-      & > div {animation: ${fromRight} 0.5s;}
+      width: ${props => props.theme.size.small + 20}px;
+      position: absolute;
+      top: ${props => props.theme.spaces[4]}px;
+      right: 0;
+      //& > div {animation: ${fromRight} 0.5s;}
     }
-  }
-`
-
-export const AuthContainer = styled.div`
-  display: flex;
-  align-items: center;
-
-  &::after {
-    content: '';
-    width: 18.3px;
-    height: 18.3px;
-    background-image: url(${bell});
-    margin-left: 61.83px;
-
-    @media (max-width: 992px) {
-      margin-left: 15px;
-    }
-  }
-    
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
-
-export const LogInStyled = styled.a.attrs({
-  href: '#',
-})`
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  color: ${({ theme } ) => theme.textColor.muted};
-  margin-right: 40px;
-  text-decoration: none;
-  
-  @media(max-width: 1024px){
-    margin-right: 15px;
-  }
-`
-
-export const RegisterButtonStyled = styled.button`
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  width: 146px;
-  height: 52px;
-  color: ${({ theme } ) => theme.textColor.light};
-  background-color: ${({ theme } ) => theme.textColor.primary};;
-  border-radius: 40px;
-  border: 0;
-  box-shadow: 0 100px 161px rgba(33, 94, 233, 0.08),
-  0 64.8148px 94.2894px rgba(33, 94, 233, 0.0607407),
-  0 38.5185px 51.2815px rgba(33, 94, 233, 0.0485926),
-  0 20px 26.1625px rgba(33, 94, 233, 0.04),
-  0 8.14815px 13.1185px rgba(33, 94, 233, 0.0314074),
-  0 1.85185px 6.33565px rgba(33, 94, 233, 0.0192593);
-
-  @media (max-width: 768px) {
-    width: 136px;
   }
 `

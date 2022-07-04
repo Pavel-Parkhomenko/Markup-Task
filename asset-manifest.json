@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/Markup-Task-Modsen/static/js/main.66eb98d9.js",
+    "static/media/main-back-man.png": "/Markup-Task-Modsen/static/media/main-back-man.6c3096ee9df81589d69e.png",
+    "static/media/Roboto-Thin.ttf": "/Markup-Task-Modsen/static/media/Roboto-Thin.a732a12eb07742232407.ttf",
+    "static/media/burger.svg": "/Markup-Task-Modsen/static/media/burger.84bbae22f745cfe5fd12f472cbfebe39.svg",
+    "static/media/vector-lines-top.svg": "/Markup-Task-Modsen/static/media/vector-lines-top.9ffb15039f91282d3e69e07315902ec4.svg",
+    "static/media/logo.svg": "/Markup-Task-Modsen/static/media/logo.d56510559bcf2da76546d732f65eb267.svg",
+    "static/media/bell.svg": "/Markup-Task-Modsen/static/media/bell.e4331b235f3a6664bca10c4be9ad09cd.svg",
+    "static/media/vectors-lines-bottom.svg": "/Markup-Task-Modsen/static/media/vectors-lines-bottom.45bc03cff75c1ad4758cbabf8531acdb.svg",
+    "static/media/vector7-mobile.svg": "/Markup-Task-Modsen/static/media/vector7-mobile.3fda65e4892b944b27f2bbad241440af.svg",
+    "static/media/vector7.svg": "/Markup-Task-Modsen/static/media/vector7.0407f9a8f8c734987c5a208ba5bec242.svg",
+    "static/media/mail.svg": "/Markup-Task-Modsen/static/media/mail.de8937406d32fc83baf1ec1cc4ce6d6b.svg",
+    "static/media/vector6.svg": "/Markup-Task-Modsen/static/media/vector6.cbab1c68fa8c73365c26e9eb1188ec66.svg",
+    "index.html": "/Markup-Task-Modsen/index.html",
+    "main.66eb98d9.js.map": "/Markup-Task-Modsen/static/js/main.66eb98d9.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.66eb98d9.js"
+  ]
+}

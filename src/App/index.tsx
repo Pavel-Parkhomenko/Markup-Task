@@ -10,6 +10,8 @@ import {
   HOME_ROUTE,
   DOCTORS_ROUTE,
   SERVICES_ROUTE,
+  LOGIN_ROUTE,
+  REGISTER_ROUTE,
 } from '@/constants'
 
 export function App() {
@@ -23,6 +25,8 @@ export function App() {
           <Route path={CONTACT_ROUTE} element={<Home />} />
           <Route path={DOCTORS_ROUTE} element={<Home />} />
           <Route path={SERVICES_ROUTE} element={<Home />} />
+          <Route path={LOGIN_ROUTE} element={<Home />} />
+          <Route path={REGISTER_ROUTE} element={<Home />} />
         </Routes>
       </HashRouter>
     </ThemeProvider>

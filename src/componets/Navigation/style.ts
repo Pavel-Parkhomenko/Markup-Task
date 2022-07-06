@@ -51,9 +51,7 @@ export const AuthContainer = styled.div`
   }
 `
 
-export const LogInStyled = styled.a.attrs({
-  href: '#',
-})`
+export const LogInStyled = styled(Link)`
   font-weight: bold;
   font-size: 16px;
   line-height: ${props => props.theme.spaces[3]}px;
@@ -70,17 +68,22 @@ export const LogInStyled = styled.a.attrs({
   }
 `
 
-export const RegisterButtonStyled = styled.button`
+export const RegisterTextStyled = styled(Link)`
   font-weight: bold;
   font-size: ${props => props.theme.fontSizes[2]}px;
   line-height: ${props => props.theme.spaces[3] + 3}px;
+  color: ${({ theme }) => theme.textColor.light};
+  text-decoration: none;
+`
+
+export const RegisterButtonStyled = styled.button`
   text-align: center;
   width: ${props => props.theme.size.med}px;
   height: ${props => props.theme.size.xs}px;
-  color: ${({ theme }) => theme.textColor.light};
   background-color: ${({ theme }) => theme.textColor.primary};;
   border-radius: ${props => props.theme.spaces[5] + 8}px;
   border: 0;
+  cursor: pointer;
   box-shadow: 0 100px 161px rgba(33, 94, 233, 0.08),
   0 64.8148px 94.2894px rgba(33, 94, 233, 0.0607407),
   0 38.5185px 51.2815px rgba(33, 94, 233, 0.0485926),
@@ -110,7 +113,6 @@ export const LinkContainerStyled = styled.div<{ active: string }>`
     & > :last-child {
       opacity: 1;
     }
-
     & > :first-child {
       color: ${({ theme }) => theme.textColor.primary}
     }

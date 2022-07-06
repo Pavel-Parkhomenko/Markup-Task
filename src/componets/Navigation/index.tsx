@@ -7,7 +7,7 @@ import {
   NavContainerStyled,
   AuthContainer,
   LogInStyled,
-  RegisterButtonStyled,
+  RegisterButtonStyled, RegisterTextStyled,
 } from './style'
 import {
   CLINIC_ROUTE,
@@ -15,6 +15,8 @@ import {
   HOME_ROUTE,
   DOCTORS_ROUTE,
   SERVICES_ROUTE,
+  LOGIN_ROUTE,
+  REGISTER_ROUTE,
 } from '@/constants'
 
 export function Navigation() {
@@ -55,8 +57,14 @@ export function Navigation() {
         </LinkContainerStyled>
       </NavContainerStyled>
       <AuthContainer>
-        <LogInStyled>Log In</LogInStyled>
-        <RegisterButtonStyled>Registr</RegisterButtonStyled>
+        <LogInStyled to={LOGIN_ROUTE}>
+          Log In
+        </LogInStyled>
+        <RegisterButtonStyled>
+          <RegisterTextStyled to={REGISTER_ROUTE}>
+            Register
+          </RegisterTextStyled>
+        </RegisterButtonStyled>
       </AuthContainer>
     </nav>
   )

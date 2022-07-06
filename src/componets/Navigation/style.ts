@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
-import bell from '../../@types/svg/bell.svg'
-
+import bell from '@/@types/svg/bell.svg'
 
 export const NavContainerStyled = styled.div`
   @media (min-width: 768px) {
@@ -50,7 +49,7 @@ export const LogInStyled = styled.a.attrs({
   font-weight: bold;
   font-size: 16px;
   line-height: ${props => props.theme.spaces[3]}px;
-  color: ${({ theme } ) => theme.textColor.muted};
+  color: ${({ theme }) => theme.textColor.muted};
   margin-right: ${props => props.theme.spaces[5]}px;
   text-decoration: none;
   
@@ -70,8 +69,8 @@ export const RegisterButtonStyled = styled.button`
   text-align: center;
   width: ${props => props.theme.size.med}px;
   height: ${props => props.theme.size.xs}px;
-  color: ${({ theme } ) => theme.textColor.light};
-  background-color: ${({ theme } ) => theme.textColor.primary};;
+  color: ${({ theme }) => theme.textColor.light};
+  background-color: ${({ theme }) => theme.textColor.primary};;
   border-radius: ${props => props.theme.spaces[5] + 8}px;
   border: 0;
   box-shadow: 0 100px 161px rgba(33, 94, 233, 0.08),
@@ -93,7 +92,7 @@ export const LinkContainerStyled = styled.div<{ active: string }>`
   align-items: center;
   color: ${({ theme }) => theme.textColor.muted};
 
-  ${props => props.active === 'true' ? css`
+  ${props => (props.active === 'true' ? css`
     & > :last-child {
       opacity: 1;
     }
@@ -105,7 +104,7 @@ export const LinkContainerStyled = styled.div<{ active: string }>`
     & > :last-child {
       opacity: 0;
     }
-  `};
+  `)};
 `
 
 export const CircleLinkPointStyled = styled.div`

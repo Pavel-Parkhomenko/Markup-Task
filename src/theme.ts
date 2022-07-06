@@ -32,5 +32,5 @@ export const defaultTheme: DefaultTheme = {
     lightDark: '#333333',
     muted: '#7D8790',
     white: '#fff',
-  }
+  },
 }

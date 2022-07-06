@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import manBackDesktop from '@/@types/png/main-back-man.png'
-import manBackMobile from '@/@types/png/main-back-man.png'
+import manBackMobile from '@/@types/png/main-back-man-mobile.png'
 import littleVector from '@/@types/vectors/vector6.svg'
 import bigVector from '@/@types/vectors/vector7.svg'
 import bigVectorMobile from '@/@types/vectors/vector7-mobile.svg'

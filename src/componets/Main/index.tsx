@@ -3,12 +3,13 @@ import {
   MainContentStyled,
   MainContainerStyled,
   MainPostMessageStyled,
-  MainTitleStyled, MainMessageStyled,
+  MainTitleStyled,
+  MainMessageStyled,
 } from './style'
 import { MainEmailInput } from '../MainEmailInput'
 import { Information } from '../Information'
 
-export const Main = () => {
+export function Main() {
   return (
     <MainContainerStyled>
       <MainContentStyled>
@@ -25,7 +26,6 @@ export const Main = () => {
         <MainEmailInput />
         <Information />
       </MainContentStyled>
-
     </MainContainerStyled>
   )
 }

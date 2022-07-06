@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import mail from '../../@types/svg/mail.svg'
+import mail from '@/@types/svg/mail.svg'
 
 export const InputEmailContainerStyled = styled.div`
   max-width: ${props => props.theme.size.large + 15}px;
@@ -69,6 +69,6 @@ export const EmailButtonStyled = styled.button`
     height: ${props => props.theme.size.little + 10}px;
     font-weight: normal;
     font-size: ${props => props.theme.fontSizes[0]}px;
-    line-height: ${props => props.theme.spaces[2]}px;
+    line-height: ${props => props.theme.spaces[2] + 5}px;
   }
 `

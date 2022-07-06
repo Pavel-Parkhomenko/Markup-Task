@@ -2,6 +2,7 @@
   "name": "markup-task",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://Pavel-Parkhomenko.github.io/Markup-Task-Modsen",
   "dependencies": {
     "@craco/craco": "^6.4.4",
     "@testing-library/jest-dom": "^5.16.4",
@@ -27,7 +28,9 @@
     "test": "craco test",
     "eject": "craco eject",
     "lint:test": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}"
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +44,7 @@
     "@typescript-eslint/parser": "^5.30.5",
     "eslint": "^8.19.0",
     "eslint-plugin-react": "^7.30.1",
+    "gh-pages": "^4.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2"
   },
   "browserslist": {

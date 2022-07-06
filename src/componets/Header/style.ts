@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
-import logo from '../../@types/svg/logo.svg'
-import burgerIcon from '../../@types/svg/burger.svg'
+import logo from '@/@types/svg/logo.svg'
+import burgerIcon from '@/@types/svg/burger.svg'
 
 export const HeaderContainerStyled = styled.div`
   width: 100%;
@@ -31,7 +31,7 @@ export const TitleStyled = styled.div`
   font-size: ${props => props.theme.fontSizes[2]}px;
   line-height: ${props => props.theme.fontSizes[4]}px;
   font-weight: bold;
-  color: ${({ theme } ) => theme.textColor.dark};
+  color: ${({ theme }) => theme.textColor.dark};
   display: flex;
   align-items: center;
 
@@ -72,7 +72,7 @@ export const NavigationContainerStyled = styled.div<{ isActiveBurger: boolean }>
     top: ${props => props.theme.spaces[3] + 10}px;
     
     & > nav {
-      display: ${({ isActiveBurger }) => isActiveBurger ? 'none' : 'flex'};
+      display: ${({ isActiveBurger }) => (isActiveBurger ? 'none' : 'flex')};
       flex-direction: column;
       width: ${props => props.theme.size.small + 20}px;
       position: absolute;

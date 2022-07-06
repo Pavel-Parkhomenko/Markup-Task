@@ -26,5 +26,18 @@ module.exports = {
         "linebreak-style": "off",
         "semi": "off",
         "arrow-parens": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-filename-extension": "off",
+        "import/extensions": [
+            "off",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
     }
 }

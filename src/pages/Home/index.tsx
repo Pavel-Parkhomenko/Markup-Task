@@ -3,7 +3,7 @@ import { Header } from '@/componets/Header'
 import { HomeContainerStyled, HomeWrapperStyled } from './style'
 import { Main } from '@/componets/Main'
 
-export const Home = () => {
+export function Home() {
   return (
     <HomeContainerStyled>
       <HomeWrapperStyled>

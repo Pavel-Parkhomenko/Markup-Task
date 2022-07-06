@@ -5,8 +5,8 @@ import {
   InputEmailStyled,
 } from './style'
 
-export const MainEmailInput = () => {
-  return(
+export function MainEmailInput() {
+  return (
     <InputEmailContainerStyled>
       <InputEmailStyled />
       <EmailButtonStyled>

@@ -8,23 +8,20 @@ import {
 } from './style'
 import { Navigation } from '../Navigation'
 
-export const Header = () => {
+export function Header() {
   const [isActiveBurger, setIsActiveBurger] = useState(false)
   const burgerHandler = () => setIsActiveBurger(prev => !prev)
-console.log(isActiveBurger)
+  console.log(isActiveBurger)
 
   return (
     <HeaderContainerStyled>
-
       <LogoNavContainerStyled>
         <TitleStyled>Modsen Health</TitleStyled>
       </LogoNavContainerStyled>
-
       <NavigationContainerStyled isActiveBurger={isActiveBurger}>
-        <BurgerIconStyled onClick={burgerHandler}/>
+        <BurgerIconStyled onClick={burgerHandler} />
         <Navigation />
       </NavigationContainerStyled>
-
     </HeaderContainerStyled>
   )
 }

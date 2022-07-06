@@ -10,22 +10,25 @@ const information = [
   {
     number: '240',
     text: 'Qualified Doctors & Medical Specialists',
+    id: 1,
   },
   {
     number: '1.456',
     text: 'Medical Tests Done For Our Patients',
+    id: 2,
   },
   {
     number: '1M+',
     text: 'Years of Experience The Medical Field',
+    id: 3,
   },
 ]
 
-export const Information = () => {
+export function Information() {
   return (
     <InformationContainerStyled>
-      {information.map((info, index) => (
-        <InformationStyled key={index}>
+      {information.map((info) => (
+        <InformationStyled key={info.id}>
           <InformationNumberStyled>
             {info.number}
           </InformationNumberStyled>

@@ -13,6 +13,14 @@ export const NavContainerStyled = styled.div`
   @media(max-width: 1200px) {
     width: ${props => props.theme.size.big + 50}px;
   }
+
+  @media(max-width: 992px) {
+    margin-right: ${props => props.theme.spaces[5] + 22}px;
+  }
+
+  @media(max-width: 768px) {
+    margin-right: 0;
+  }
 `
 
 export const AuthContainer = styled.div`
@@ -79,6 +87,12 @@ export const RegisterButtonStyled = styled.button`
   0 20px 26.1625px rgba(33, 94, 233, 0.04),
   0 8.14815px 13.1185px rgba(33, 94, 233, 0.0314074),
   0 1.85185px 6.33565px rgba(33, 94, 233, 0.0192593);
+
+
+  @media(max-width: 992px) {
+    width: ${props => props.theme.size.small + 20}px;
+    height: ${props => props.theme.size.xs}px;
+  }
 
   @media (max-width: 768px) {
     width: ${props => props.theme.size.xs + 20}px;

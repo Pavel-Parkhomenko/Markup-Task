@@ -18,7 +18,6 @@ import {
 } from '@/constants'
 
 export function Navigation() {
-
   const { pathname } = useLocation()
 
   return (

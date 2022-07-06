@@ -14,8 +14,12 @@ export const MainContentStyled = styled.div`
   margin-left: -6px;
 
   @media(max-width: 768px) {
-    margin-top: ${props => props.theme.spaces[6] + 8}px;
-    margin-left: ${props => props.theme.spaces[4]}px;
+    margin-top: 0;
+    margin-left: ${props => props.theme.spaces[5]}px;
+  }
+
+  @media(max-width: 568px) {
+    margin-left: ${props => props.theme.spaces[3]}px;
   }
 `
 export const MainTitleStyled = styled.h1`
@@ -37,9 +41,9 @@ export const MainPostMessageStyled = styled.h2`
   width: ${props => props.theme.size.large + 43}px;
   margin-top: 0;
   
-  @media(max-width: 414px) {
+  @media(max-width: 568px) {
     line-height: ${props => props.theme.spaces[6] - 20}px;
-    font-size: ${props => props.theme.fontSizes[6] + 5}px;
+    font-size: ${props => props.theme.fontSizes[5] + 5}px;
     width: ${props => props.theme.size.big}px;
   }
 `
@@ -54,9 +58,9 @@ export const MainMessageStyled = styled.p`
   line-height: ${props => props.theme.spaces[5]}px;
   opacity: 0.7;
 
-  @media(max-width: 414px) {
+  @media(max-width: 568px) {
     line-height: ${props => props.theme.spaces[4]}px;
     font-size: ${props => props.theme.fontSizes[1]}px;
-    width: ${props => props.theme.size.large + 20}px;
+    width: ${props => props.theme.size.big + 20}px;
   }
 `

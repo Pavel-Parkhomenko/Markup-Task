@@ -6,7 +6,6 @@ export const InputEmailContainerStyled = styled.div`
   height: ${props => props.theme.size.xs + 18}px;
   border-radius: ${props => props.theme.spaces[5] + 8}px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.bgColor.light};
   margin-bottom: ${props => props.theme.spaces[7] - 28}px;
@@ -15,13 +14,13 @@ export const InputEmailContainerStyled = styled.div`
     content: '';
     background: url(${mail}) no-repeat;
     width: ${props => props.theme.size.xs}px;
-    height: ${props => props.theme.size.little}px;
+    height: ${props => props.theme.size.little - 9}px;
     margin-right: ${props => props.theme.spaces[4]}px;
     margin-left: ${props => props.theme.spaces[4]}px;
     opacity: 0.2;
   }
 
-  @media(max-width: 414px){
+  @media(max-width: 568px){
     width: ${props => props.theme.size.big + 30}px;
   }
 `
@@ -64,7 +63,7 @@ export const EmailButtonStyled = styled.button`
   0 8.14815px 13.1185px rgba(33, 94, 233, 0.0314074),
   0 1.85185px 6.33565px rgba(33, 94, 233, 0.0192593);
 
-  @media(max-width: 414px){
+  @media(max-width: 568px){
     width: ${props => props.theme.size.small}px;
     height: ${props => props.theme.size.little + 10}px;
     font-weight: normal;

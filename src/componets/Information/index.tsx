@@ -1,42 +1,25 @@
 import React from 'react'
+import { information } from '@/mocks'
 import {
-  InformationContainerStyled,
-  InformationNumberStyled,
+  Container,
+  Number,
   InformationStyled,
-  InformationTextStyled,
-} from './style'
-
-const information = [
-  {
-    number: '240',
-    text: 'Qualified Doctors & Medical Specialists',
-    id: 1,
-  },
-  {
-    number: '1.456',
-    text: 'Medical Tests Done For Our Patients',
-    id: 2,
-  },
-  {
-    number: '1M+',
-    text: 'Years of Experience The Medical Field',
-    id: 3,
-  },
-]
+  Text,
+} from './styled'
 
 export function Information() {
   return (
-    <InformationContainerStyled>
+    <Container>
       {information.map((info) => (
         <InformationStyled key={info.id}>
-          <InformationNumberStyled>
+          <Number>
             {info.number}
-          </InformationNumberStyled>
-          <InformationTextStyled>
+          </Number>
+          <Text>
             {info.text}
-          </InformationTextStyled>
+          </Text>
         </InformationStyled>
       ))}
-    </InformationContainerStyled>
+    </Container>
   )
 }

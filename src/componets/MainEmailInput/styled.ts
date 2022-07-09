@@ -1,42 +1,45 @@
 import styled from 'styled-components'
 import mail from '@/@types/svg/mail.svg'
 
-export const InputEmailContainerStyled = styled.div`
-  max-width: ${props => props.theme.size.large + 15}px;
-  height: ${props => props.theme.size.xs + 18}px;
+const CONTAINER_MAX_WIDTH = '515px'
+const CONTAINER_HEIGHT = '68px'
+const CONTAINER_MIN_WIDTH = '330px'
+const MAIL_ICON_WIDTH = '50px'
+const MAIL_ICON_HEIGHT = '16px'
+const INPUT_WIDTH = '100%'
+
+export const Container = styled.div`
+  max-width: ${CONTAINER_MAX_WIDTH};
+  height: ${CONTAINER_HEIGHT};
   border-radius: ${props => props.theme.spaces[5] + 8}px;
   display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.bgColor.light};
-  margin-bottom: ${props => props.theme.spaces[7] - 28}px;
 
   &::before {
     content: '';
     background: url(${mail}) no-repeat;
-    width: ${props => props.theme.size.xs}px;
-    height: ${props => props.theme.size.little - 9}px;
+    width: ${MAIL_ICON_WIDTH};
+    height: ${MAIL_ICON_HEIGHT};
     margin-right: ${props => props.theme.spaces[4]}px;
     margin-left: ${props => props.theme.spaces[4]}px;
     opacity: 0.2;
   }
 
   @media(max-width: 568px){
-    width: ${props => props.theme.size.big + 30}px;
+    width: ${CONTAINER_MIN_WIDTH};
   }
 `
 
-export const InputEmailStyled = styled.input.attrs({
-  placeholder: 'Enter your email',
-  type: 'text',
-})`
+export const InputEmail = styled.input`
   border: none;
   outline: none;
   -webkit-appearance: none;
-  width: 100%;
+  width: ${INPUT_WIDTH};
   vertical-align: middle;
 
   &::placeholder {
-    font-weight: normal;
+    font-weight: ${({ theme }) => theme.fontWeight.normal};
     font-size: 16px;
     line-height: ${props => props.theme.spaces[3]}px;
     color: ${({ theme }) => theme.textColor.dark};
@@ -44,11 +47,11 @@ export const InputEmailStyled = styled.input.attrs({
   }
 `
 
-export const EmailButtonStyled = styled.button`
+export const EmailButton = styled.button`
   width: ${props => props.theme.size.big + 30}px;
   height: ${props => props.theme.size.xs}px;
   margin-right: ${props => props.theme.spaces[2] + 3}px;
-  font-weight: bold;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${props => props.theme.fontSizes[2]}px;
   line-height: ${props => props.theme.spaces[3]}px;
   text-align: center;
@@ -66,7 +69,7 @@ export const EmailButtonStyled = styled.button`
   @media(max-width: 568px){
     width: ${props => props.theme.size.small}px;
     height: ${props => props.theme.size.little + 10}px;
-    font-weight: normal;
+    font-weight: ${({ theme }) => theme.fontWeight.normal};
     font-size: ${props => props.theme.fontSizes[0]}px;
     line-height: ${props => props.theme.spaces[2] + 5}px;
   }

@@ -16,4 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Roboto", sans-serif;
     font-style: normal;
   }
+  
+  body, html {
+    height: 100vh;
+  }
 `

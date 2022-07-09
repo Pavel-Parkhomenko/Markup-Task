@@ -1,17 +1,18 @@
 import React from 'react'
+import { emailPlaceholder } from '@/mocks'
 import {
-  EmailButtonStyled,
-  InputEmailContainerStyled,
-  InputEmailStyled,
-} from './style'
+  EmailButton,
+  Container,
+  InputEmail,
+} from './styled'
 
 export function MainEmailInput() {
   return (
-    <InputEmailContainerStyled>
-      <InputEmailStyled />
-      <EmailButtonStyled>
+    <Container>
+      <InputEmail placeholder={emailPlaceholder} />
+      <EmailButton>
         Get Started
-      </EmailButtonStyled>
-    </InputEmailContainerStyled>
+      </EmailButton>
+    </Container>
   )
 }

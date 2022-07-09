@@ -1,32 +1,37 @@
 import styled from 'styled-components'
 
-export const InformationContainerStyled = styled.div`
+const CONTAINER_MAX_WIDTH = '558px'
+const CONTAINER_WIDTH = '360px'
+const INFORMATION_MAX_WIDTH = '143px'
+
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: ${props => props.theme.size.large + 58}px;
+  max-width: ${CONTAINER_MAX_WIDTH};
+  margin-top: ${props => props.theme.spaces[7] - 9}px;
   
   @media(max-width: 414px) {
-    width: ${props => props.theme.size.big + 60}px;
+    width: ${CONTAINER_WIDTH};
   }
 `
 
 export const InformationStyled = styled.div`
-  max-width: ${props => props.theme.size.med - 7}px;
+  max-width: ${INFORMATION_MAX_WIDTH};
 
   &:nth-child(2) div {
     color: ${({ theme }) => theme.textColor.primary};
   }
 `
 
-export const InformationTextStyled = styled.span`
-  font-weight: normal;
+export const Text = styled.span`
+  font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${props => props.theme.spaces[3]}px;
   line-height: ${props => props.theme.spaces[4]}px;
   color: ${({ theme }) => theme.textColor.dark};
 `
 
-export const InformationNumberStyled = styled.div`
-  font-weight: bold;
+export const Number = styled.div`
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${props => props.theme.fontSizes[7]}px;
   line-height: ${props => props.theme.spaces[6]}px;
   letter-spacing: -4px;

@@ -2,24 +2,31 @@ import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 import bell from '@/@types/svg/bell.svg'
 
-export const NavContainerStyled = styled.div`
+const CONTAINER_WIDTH = '100%'
+const BELL_WIDTH = '22px'
+const BELL_HEIGHT = '22px'
+const LOGIN_WIDTH = '50px'
+const LINK_CONTAINER_MIN_WIDTH = '100%'
+const CIRCLE_POINT_WIDTH = '8px'
+const CIRCLE_POINT_HEIGHT = '8px'
+
+export const Container = styled.div`
   @media (min-width: 768px) {
     display: flex;
-    margin-right: ${props => props.theme.spaces[7] + 22}px;
-    width: ${props => props.theme.size.large - 30}px;
+    margin-left: 24%;
+    margin-right: 15.5%;
+    width: ${CONTAINER_WIDTH};
     justify-content: space-between;
   }
-  
-  @media(max-width: 1200px) {
-    width: ${props => props.theme.size.big + 50}px;
+
+  @media(max-width: 1286px) {
+    margin-left: 10%;
+    margin-right: 5.5%;
   }
 
-  @media(max-width: 992px) {
-    margin-right: ${props => props.theme.spaces[5] + 22}px;
-  }
-
-  @media(max-width: 768px) {
-    margin-right: 0;
+  @media(max-width: 1024px) {
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `
 
@@ -29,60 +36,51 @@ export const AuthContainer = styled.div`
 
   &::after {
     content: '';
-    width: ${props => props.theme.size.little - 7}px;
-    height: ${props => props.theme.size.little - 7}px;
-    background-image: url(${bell});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: ${BELL_WIDTH};
+    height: ${BELL_HEIGHT};
+    background: url(${bell}) no-repeat;
+    background-size: 100%;
     margin-left: ${props => props.theme.spaces[6]}px;
 
     @media (max-width: 992px) {
       margin-left: ${props => props.theme.spaces[3]}px;
     }
   }
-    
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    height: ${props => props.theme.size.med}px;
-    justify-content: space-around;
-
-    &::after {
-      margin-left: 0;
-    }
-  }
 `
 
-export const LogInStyled = styled(Link)`
-  font-weight: bold;
+export const LogIn = styled(Link)`
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: 16px;
   line-height: ${props => props.theme.spaces[3]}px;
   color: ${({ theme }) => theme.textColor.muted};
   margin-right: ${props => props.theme.spaces[5]}px;
   text-decoration: none;
+  width: ${LOGIN_WIDTH};
   
-  @media(max-width: 1024px){
+  @media(max-width: 1024px) {
     margin-right: ${props => props.theme.spaces[3]}px;
   }
   
-  @media(max-width: 768px){
-    margin-right: 0;
+  @media(max-width: 992px) {
+    margin-right: ${props => props.theme.spaces[3]}px;
   }
 `
 
-export const RegisterTextStyled = styled(Link)`
-  font-weight: bold;
+export const Button = styled.button`
+  text-align: center;
+  width: ${props => props.theme.size.med}px;
+  height: ${props => props.theme.size.xs + 4}px;
+  background-color: ${({ theme }) => theme.textColor.primary};;
+  border-radius: ${props => props.theme.spaces[5] + 8}px;
+  border: 0;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${props => props.theme.fontSizes[2]}px;
   line-height: ${props => props.theme.spaces[3] + 3}px;
   color: ${({ theme }) => theme.textColor.light};
   text-decoration: none;
-`
-
-export const RegisterButtonStyled = styled.button`
-  text-align: center;
-  width: ${props => props.theme.size.med}px;
-  height: ${props => props.theme.size.xs}px;
-  background-color: ${({ theme }) => theme.textColor.primary};;
-  border-radius: ${props => props.theme.spaces[5] + 8}px;
-  border: 0;
   cursor: pointer;
   box-shadow: 0 100px 161px rgba(33, 94, 233, 0.08),
   0 64.8148px 94.2894px rgba(33, 94, 233, 0.0607407),
@@ -96,14 +94,9 @@ export const RegisterButtonStyled = styled.button`
     width: ${props => props.theme.size.small + 20}px;
     height: ${props => props.theme.size.xs}px;
   }
-
-  @media (max-width: 768px) {
-    width: ${props => props.theme.size.xs + 20}px;
-    height: ${props => props.theme.size.little}px;
-  }
 `
 
-export const LinkContainerStyled = styled.div<{ active: string }>`
+export const LinkContainer = styled.div<{ active: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,6 +106,7 @@ export const LinkContainerStyled = styled.div<{ active: string }>`
     & > :last-child {
       opacity: 1;
     }
+
     & > :first-child {
       color: ${({ theme }) => theme.textColor.primary}
     }
@@ -121,18 +115,28 @@ export const LinkContainerStyled = styled.div<{ active: string }>`
       opacity: 0;
     }
   `)};
+
+  @media (max-width: 767px) {
+    flex-direction: row-reverse;
+    width: ${LINK_CONTAINER_MIN_WIDTH};
+    justify-content: flex-end;
+    border-bottom: 1px solid black;
+    & > :last-child {
+      margin: 6.5px 24px 0 2px;
+    }
+  }
 `
 
-export const CircleLinkPointStyled = styled.div`
+export const CirclePoint = styled.div`
   border-radius: 50%;
   background-color: ${({ theme }) => theme.bgColor.primary};
-  width: 8px;
-  height: 8px;
+  width: ${CIRCLE_POINT_WIDTH};
+  height: ${CIRCLE_POINT_HEIGHT};
 `
 
 export const LinkStyled = styled(Link)`
   text-decoration: none;
-  font-weight: bold;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${props => props.theme.fontSizes[2]}px;
   position: relative;
   cursor: pointer;

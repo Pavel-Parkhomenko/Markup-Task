@@ -1,31 +1,28 @@
 import React from 'react'
 import {
-  MainContentStyled,
-  MainContainerStyled,
-  MainPostMessageStyled,
-  MainTitleStyled,
-  MainMessageStyled,
-} from './style'
+  Container,
+  PostMessage,
+  Title,
+  Message,
+} from './styled'
 import { MainEmailInput } from '../MainEmailInput'
 import { Information } from '../Information'
+import { mainInfo } from '@/mocks'
 
 export function Main() {
   return (
-    <MainContainerStyled>
-      <MainContentStyled>
-        <MainTitleStyled>
-          Booking of doctor’s appointment
-        </MainTitleStyled>
-        <MainPostMessageStyled>
-          Don’t Miss Our Exclusive Patient Special
-        </MainPostMessageStyled>
-        <MainMessageStyled>
-          We want to make sure that everyone has access to natural and effective care.
-          With our special, you’ll receive a consultation and a digital posture assesment.
-        </MainMessageStyled>
-        <MainEmailInput />
-        <Information />
-      </MainContentStyled>
-    </MainContainerStyled>
+    <Container>
+      <Title>
+        {mainInfo.title}
+      </Title>
+      <PostMessage>
+        {mainInfo.postMessage}
+      </PostMessage>
+      <Message>
+        {mainInfo.message}
+      </Message>
+      <MainEmailInput />
+      <Information />
+    </Container>
   )
 }

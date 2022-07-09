@@ -1,27 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
-  HeaderContainerStyled,
-  LogoNavContainerStyled,
-  TitleStyled,
-  NavigationContainerStyled,
-  BurgerIconStyled,
-} from './style'
-import { Navigation } from '../Navigation'
+  Container,
+  Title,
+  NavigationStyled,
+  BurgerIcon,
+} from './styled'
+import { Navigation } from '@/componets/Navigation'
+import { headerTitle } from '@/mocks'
 
-export function Header() {
-  const [isActiveBurger, setIsActiveBurger] = useState(false)
-  const burgerHandler = () => setIsActiveBurger(prev => !prev)
-  console.log(isActiveBurger)
+interface IPropsHeader {
+  isActiveBurger: boolean,
+  setIsActiveBurger: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const Header: React.FC<IPropsHeader> = ({ isActiveBurger, setIsActiveBurger }) => {
+  const burgerHandler = () => setIsActiveBurger(!isActiveBurger)
 
   return (
-    <HeaderContainerStyled>
-      <LogoNavContainerStyled>
-        <TitleStyled>Modsen Health</TitleStyled>
-      </LogoNavContainerStyled>
-      <NavigationContainerStyled isActiveBurger={isActiveBurger}>
-        <BurgerIconStyled onClick={burgerHandler} />
+    <Container>
+      <Title>{ headerTitle }</Title>
+      <NavigationStyled isActiveBurger={isActiveBurger}>
+        <BurgerIcon onClick={burgerHandler} />
         <Navigation />
-      </NavigationContainerStyled>
-    </HeaderContainerStyled>
+      </NavigationStyled>
+    </Container>
   )
 }

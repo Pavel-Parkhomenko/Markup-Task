@@ -1,4 +1,4 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es2021": true
@@ -24,11 +24,20 @@ module.exports = {
     ],
     "rules": {
         "linebreak-style": "off",
-        "semi": "off",
+        "arrow-body-style": "off",
+        "react/function-component-definition": "off",
+        "no-trailing-spaces": "off",
+        "semi": ["error", "never"],
         "arrow-parens": "off",
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "react/jsx-filename-extension": "off",
+        "comma-dangle": "off",
+        "react/jsx-curly-brace-presence": "off",
+        "default-param-last": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
         "import/extensions": [
             "off",
             "ignorePackages",

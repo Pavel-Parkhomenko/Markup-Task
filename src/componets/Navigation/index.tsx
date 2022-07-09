@@ -1,70 +1,44 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import {
   LinkStyled,
-  LinkContainerStyled,
-  CircleLinkPointStyled,
-  NavContainerStyled,
+  LinkContainer,
+  CirclePoint,
+  Container,
   AuthContainer,
-  LogInStyled,
-  RegisterButtonStyled, RegisterTextStyled,
-} from './style'
+  LogIn,
+  Button,
+} from './styled'
 import {
-  CLINIC_ROUTE,
-  CONTACT_ROUTE,
-  HOME_ROUTE,
-  DOCTORS_ROUTE,
-  SERVICES_ROUTE,
   LOGIN_ROUTE,
   REGISTER_ROUTE,
 } from '@/constants'
 
+const navigation: string[] = ['Home', 'Services', 'Clinic', 'Doctors', 'Contact']
+
 export function Navigation() {
-  const { pathname } = useLocation()
+  const { link } = useParams()
 
   return (
     <nav>
-      <NavContainerStyled>
-        <LinkContainerStyled active={(pathname === HOME_ROUTE).toString()}>
-          <LinkStyled to={HOME_ROUTE}>
-            Home
-          </LinkStyled>
-          <CircleLinkPointStyled />
-        </LinkContainerStyled>
-        <LinkContainerStyled active={(pathname === SERVICES_ROUTE).toString()}>
-          <LinkStyled to={SERVICES_ROUTE}>
-            Services
-          </LinkStyled>
-          <CircleLinkPointStyled />
-        </LinkContainerStyled>
-        <LinkContainerStyled active={(pathname === CLINIC_ROUTE).toString()}>
-          <LinkStyled to={CLINIC_ROUTE}>
-            Clinic
-          </LinkStyled>
-          <CircleLinkPointStyled />
-        </LinkContainerStyled>
-        <LinkContainerStyled active={(pathname === DOCTORS_ROUTE).toString()}>
-          <LinkStyled to={DOCTORS_ROUTE}>
-            Doctors
-          </LinkStyled>
-          <CircleLinkPointStyled />
-        </LinkContainerStyled>
-        <LinkContainerStyled active={(pathname === CONTACT_ROUTE).toString()}>
-          <LinkStyled to={CONTACT_ROUTE}>
-            Contact
-          </LinkStyled>
-          <CircleLinkPointStyled />
-        </LinkContainerStyled>
-      </NavContainerStyled>
+      <Container>
+        {navigation.map((title) => (
+          <LinkContainer key={title} active={(link === title).toString()}>
+            <LinkStyled to={`${title}`}>
+              { title }
+            </LinkStyled>
+            <CirclePoint />
+          </LinkContainer>
+        ))}
+      </Container>
+
       <AuthContainer>
-        <LogInStyled to={LOGIN_ROUTE}>
+        <LogIn to={LOGIN_ROUTE}>
           Log In
-        </LogInStyled>
-        <RegisterButtonStyled>
-          <RegisterTextStyled to={REGISTER_ROUTE}>
-            Register
-          </RegisterTextStyled>
-        </RegisterButtonStyled>
+        </LogIn>
+        <Button>
+          Register
+        </Button>
       </AuthContainer>
     </nav>
   )

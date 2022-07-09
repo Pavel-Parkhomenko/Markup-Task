@@ -7,11 +7,7 @@ import {
 } from './styled'
 import { Navigation } from '@/componets/Navigation'
 import { headerTitle } from '@/mocks'
-
-interface IPropsHeader {
-  isActiveBurger: boolean,
-  setIsActiveBurger: React.Dispatch<React.SetStateAction<boolean>>
-}
+import { IPropsHeader } from '@/interfaces'
 
 export const Header: React.FC<IPropsHeader> = ({ isActiveBurger, setIsActiveBurger }) => {
   const burgerHandler = () => setIsActiveBurger(!isActiveBurger)

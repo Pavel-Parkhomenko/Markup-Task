@@ -1,17 +1,13 @@
-import styled from 'styled-components'
-import { IButtonStyled } from '@/interfaces/'
+import styled, { css } from 'styled-components'
+import { IButtonStyled, VariantButton } from '@/interfaces'
 
-// navigation
-export const Button = styled.button`
-  width: ${props => props.theme.size.med}px;
-  
-  @media(max-width: 992px) {
-    width: ${props => props.theme.size.small + 20}px;
-    height: ${props => props.theme.size.xs}px;
-  }
-`
+const BUTTON_MAIL_WIDTH = '330px'
+const BUTTON_NAV_WIDTH = '150px'
 
-export const ButtonStyled = styled('button')`
+export const ButtonStyled = styled('button')<IButtonStyled>`
+  width: ${({ variant }) => (variant === VariantButton.email 
+    ? BUTTON_MAIL_WIDTH 
+    : BUTTON_NAV_WIDTH)};
   height: ${({ theme }) => theme.size.xs}px;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${props => props.theme.fontSizes[2]}px;
@@ -28,18 +24,20 @@ export const ButtonStyled = styled('button')`
   0 20px 26.1625px rgba(33, 94, 233, 0.04),
   0 8.14815px 13.1185px rgba(33, 94, 233, 0.0314074),
   0 1.85185px 6.33565px rgba(33, 94, 233, 0.0192593);
-`
-
-export const EmailButton = styled.button`
-  width: ${props => props.theme.size.big + 30}px;
-  margin-right: ${props => props.theme.spaces[2] + 3}px;
-
-
-  @media(max-width: 568px){
-    width: ${props => props.theme.size.small}px;
-    height: ${props => props.theme.size.little + 10}px;
-    font-weight: ${({ theme }) => theme.fontWeight.normal};
-    font-size: ${props => props.theme.fontSizes[0]}px;
-    line-height: ${props => props.theme.spaces[2] + 5}px;
+  
+  ${({ variant }) => (variant === VariantButton.email ? css`
+    margin-right: ${props => props.theme.spaces[2] + 3}px;
+    @media(max-width: 568px) {
+      width: ${props => props.theme.size.med}px;
+      height: ${props => props.theme.size.little + 10}px;
+      font-weight: ${({ theme }) => theme.fontWeight.normal};
+      font-size: ${props => props.theme.fontSizes[0]}px;
+      line-height: ${props => props.theme.spaces[2] + 5}px;
   }
+  ` : css`
+    @media(max-width: 992px) {
+      width: ${props => props.theme.size.small + 20}px;
+      height: ${props => props.theme.size.xs}px;
+    }
+  `)}
 `

@@ -69,33 +69,6 @@ export const LogIn = styled(Link)`
   }
 `
 
-export const Button = styled.button`
-  text-align: center;
-  width: ${props => props.theme.size.med}px;
-  height: ${props => props.theme.size.xs + 4}px;
-  background-color: ${({ theme }) => theme.textColor.primary};;
-  border-radius: ${props => props.theme.spaces[5] + 8}px;
-  border: 0;
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
-  font-size: ${props => props.theme.fontSizes[2]}px;
-  line-height: ${props => props.theme.spaces[3] + 3}px;
-  color: ${({ theme }) => theme.textColor.light};
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 100px 161px rgba(33, 94, 233, 0.08),
-  0 64.8148px 94.2894px rgba(33, 94, 233, 0.0607407),
-  0 38.5185px 51.2815px rgba(33, 94, 233, 0.0485926),
-  0 20px 26.1625px rgba(33, 94, 233, 0.04),
-  0 8.14815px 13.1185px rgba(33, 94, 233, 0.0314074),
-  0 1.85185px 6.33565px rgba(33, 94, 233, 0.0192593);
-
-
-  @media(max-width: 992px) {
-    width: ${props => props.theme.size.small + 20}px;
-    height: ${props => props.theme.size.xs}px;
-  }
-`
-
 export const LinkContainer = styled.div<{ active: string }>`
   display: flex;
   flex-direction: column;

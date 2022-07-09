@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import logo from '@/@types/svg/logo.svg'
 import burgerIcon from '@/@types/svg/burger.svg'
+import closeIcon from '@/@types/svg/close.svg'
 
 const CONTAINER_WIDTH = '100%'
 const LOGO_WIDTH = '24px'
@@ -34,8 +35,11 @@ export const Title = styled.div`
   }
 `
 
-export const BurgerIcon = styled.div`
-  background-image: url(${burgerIcon});
+export const BurgerIcon = styled.div<{ isActiveBurger: boolean }>`
+  background-image: ${({ isActiveBurger }) => (isActiveBurger 
+    ? `url(${burgerIcon})` 
+    : `url(${closeIcon})`
+  )};
   width: ${BURGER_ICON_WIDTH};
   height: ${BURGER_ICON_HEIGHT};
   position: absolute;
@@ -44,6 +48,15 @@ export const BurgerIcon = styled.div`
   
   @media (min-width: 768px) {
     display: none;
+  }
+`
+
+const fromRight = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
   }
 `
 
@@ -58,6 +71,7 @@ export const NavigationStyled = styled.div<{ isActiveBurger: boolean }>`
 
   @media (max-width: 767px) {
     & > nav {
+      animation: ${fromRight} 0.5s;
       display: ${({ isActiveBurger }) => (isActiveBurger ? 'none' : 'flex')};
       flex-direction: column;
       width: ${NAV_WIDTH};

@@ -16,7 +16,7 @@ export const HomeWrapperStyled = styled.div<{isActiveBurger: boolean}>`
   width: ${HOME_WRAPPER_WIDTH};
   min-height: ${HOME_WRAPPER_MIN_HEIGHT};
   padding: 9% 5.5% 5% 10.5%;
-  background: url(${manBackDesktop}) no-repeat 100% 45%,
+  background: url(${manBackDesktop}) no-repeat 97% 53%,
   url(${littleVector}) no-repeat 90% 25%,
   url(${bigVector}) no-repeat 100% 100%,
   url(${linesBottom}) no-repeat 0 95%,

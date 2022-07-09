@@ -1,5 +1,6 @@
 export const headerTitle = 'Modsen Health'
 export const emailPlaceholder = 'Enter your email'
+export const navigation: string[] = ['Home', 'Services', 'Clinic', 'Doctors', 'Contact']
 
 export const mainInfo = {
   title: 'Booking of doctor’s appointment',

@@ -1,5 +1,8 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Button } from '@/componets/Button'
+import { VariantButton } from '@/interfaces'
+import { navigation } from '@/mocks'
 import {
   LinkStyled,
   LinkContainer,
@@ -7,17 +10,19 @@ import {
   Container,
   AuthContainer,
   LogIn,
-  Button,
 } from './styled'
 import {
   LOGIN_ROUTE,
-  REGISTER_ROUTE,
+  REGISTER_ROUTE
 } from '@/constants'
-
-const navigation: string[] = ['Home', 'Services', 'Clinic', 'Doctors', 'Contact']
 
 export function Navigation() {
   const { link } = useParams()
+  const navigate = useNavigate()
+
+  const registerHandler = () => {
+    navigate(REGISTER_ROUTE, { replace: true })
+  }
 
   return (
     <nav>
@@ -36,9 +41,7 @@ export function Navigation() {
         <LogIn to={LOGIN_ROUTE}>
           Log In
         </LogIn>
-        <Button>
-          Register
-        </Button>
+        <Button onClick={registerHandler} variant={VariantButton.register} title={'Register'} />
       </AuthContainer>
     </nav>
   )

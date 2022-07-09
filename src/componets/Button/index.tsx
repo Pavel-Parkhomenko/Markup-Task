@@ -4,12 +4,11 @@ import { IPropsButton } from '@/interfaces/'
 
 export const Button: React.FC<IPropsButton> = ({
   title,
-  type,
-  marginRight,
-  width
+  variant,
+  onClick
 }) => {
   return (
-    <ButtonStyled>
+    <ButtonStyled onClick={onClick} variant={variant}>
       {title}
     </ButtonStyled>
   )

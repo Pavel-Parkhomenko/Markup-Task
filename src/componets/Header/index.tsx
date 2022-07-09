@@ -20,7 +20,7 @@ export const Header: React.FC<IPropsHeader> = ({ isActiveBurger, setIsActiveBurg
     <Container>
       <Title>{ headerTitle }</Title>
       <NavigationStyled isActiveBurger={isActiveBurger}>
-        <BurgerIcon onClick={burgerHandler} />
+        <BurgerIcon isActiveBurger={isActiveBurger} onClick={burgerHandler} />
         <Navigation />
       </NavigationStyled>
     </Container>

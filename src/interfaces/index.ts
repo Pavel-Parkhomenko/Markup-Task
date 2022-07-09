@@ -10,7 +10,7 @@ export interface IButtonStyled {
   variant: keyof typeof VariantButton
 }
 
-export interface IPropsButton extends IButtonStyled{
+export interface IPropsButton extends IButtonStyled {
   title: string,
   onClick: () => void
 }

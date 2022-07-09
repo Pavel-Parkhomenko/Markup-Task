@@ -19,12 +19,17 @@ export const Container = styled.div`
     justify-content: space-between;
   }
 
+  @media(max-width: 1326px) {
+    margin-left: 14%;
+    margin-right: 10.5%;
+  }
+
   @media(max-width: 1286px) {
     margin-left: 10%;
     margin-right: 5.5%;
   }
 
-  @media(max-width: 1024px) {
+  @media(max-width: 1061px) {
     margin-left: 5%;
     margin-right: 5%;
   }

@@ -7,6 +7,14 @@
 - develop - contains the source code
 - gh-pages - demo
 
+## Stack
+- JavaScript
+- React
+- Styled-Components
+- TypeScript
+- Figma
+- Pixel-Perfect
+
 ## The layout is displayed correctly in the following browser versions:
 - **Internet Explorer** versions **11** , platforms — **Windows**
 - **Microsoft Edge** versions **12** and above, platforms — **Windows**, **Mac OS**

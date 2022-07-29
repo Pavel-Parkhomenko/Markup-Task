@@ -3,6 +3,10 @@
 - Adaptive layout of a typical page of an Internet resource in the format of the **JS** language, syntactic sugar **JSX** and the stylization system **React** of Styled Components
 - The layout was performed using the **Pixel Perfect method**
 
+## Branches
+- develop - contains the source code
+- gh-pages - demo
+
 ## The layout is displayed correctly in the following browser versions:
 - **Internet Explorer** versions **11** , platforms — **Windows**
 - **Microsoft Edge** versions **12** and above, platforms — **Windows**, **Mac OS**

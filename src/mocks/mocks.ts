@@ -1,4 +1,4 @@
-export const headerTitle = 'Modsen Health'
+export const headerTitle = 'Health'
 export const emailPlaceholder = 'Enter your email'
 export const navigation: string[] = ['Home', 'Services', 'Clinic', 'Doctors', 'Contact']
 
